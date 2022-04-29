@@ -33,12 +33,18 @@ export GOSUMDB=${GOSUMDB:-off}
 #export ISTIO_ENVOY_BASE_URL=https://storage.googleapis.com/istio-build/proxy
 
 # Use local envoy build
-export USE_LOCAL_PROXY=${USE_LOCAL_PROXY:-1}
-export TARGET_OS=${TARGET_OS:-linux}
-ISTIO_ENVOY_LINUX_RELEASE_NAME=mosn
-export ISTIO_ENVOY_CENTOS_LINUX_RELEASE_NAME=$ISTIO_ENVOY_LINUX_RELEASE_NAME
-ISTIO_ENVOY_LOCAL_DIR=${ISTIO_ENVOY_LOCAL_DIR:-"proxy"}
-export ISTIO_ENVOY_LOCAL="/work/$ISTIO_ENVOY_LOCAL_DIR/$ISTIO_ENVOY_LINUX_RELEASE_NAME"
+#export USE_LOCAL_PROXY=${USE_LOCAL_PROXY:-1}
+#export TARGET_OS=${TARGET_OS:-linux}
+#ISTIO_ENVOY_LINUX_RELEASE_NAME=envoy
+#export ISTIO_ENVOY_CENTOS_LINUX_RELEASE_NAME=$ISTIO_ENVOY_LINUX_RELEASE_NAME
+#ISTIO_ENVOY_LOCAL_DIR=${ISTIO_ENVOY_LOCAL_DIR:-"proxy"}
+#export ISTIO_ENVOY_LOCAL="/work/$ISTIO_ENVOY_LOCAL_DIR/$ISTIO_ENVOY_LINUX_RELEASE_NAME"
+
+# Use mosn
+address=127.0.0.1:10000 # your download service address
+export ISTIO_ENVOY_RELEASE_URL=http://$address/mosn.tar.gz
+export ISTIO_ENVOY_CENTOS_RELEASE_URL=http://$address/mosn-centos.tar.gz
+export SIDECAR=mosn
 
 # set local proxy
 #export https_proxy=socks5://127.0.0.1:1080
