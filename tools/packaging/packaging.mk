@@ -45,7 +45,7 @@ $(foreach DEST,$(ISTIO_DEB_DEST),\
 SIDECAR_FILES+=${REPO_ROOT}/tools/packaging/common/envoy_bootstrap.json=/var/lib/istio/envoy/envoy_bootstrap_tmpl.json
 SIDECAR_CENTOS_7_FILES+=${REPO_ROOT}/tools/packaging/common/envoy_bootstrap.json=/var/lib/istio/envoy/envoy_bootstrap_tmpl.json
 
-ISTIO_EXTENSIONS:=stats-filter.wasm \
+#ISTIO_EXTENSIONS:=stats-filter.wasm \
                   stats-filter.compiled.wasm \
                   metadata-exchange-filter.wasm \
                   metadata-exchange-filter.compiled.wasm
