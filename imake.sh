@@ -41,10 +41,8 @@ export GOSUMDB=${GOSUMDB:-off}
 #export ISTIO_ENVOY_LOCAL="/work/$ISTIO_ENVOY_LOCAL_DIR/$ISTIO_ENVOY_LINUX_RELEASE_NAME"
 
 # Use mosn
-address=127.0.0.1:10000 # your download service address
-export ISTIO_ENVOY_RELEASE_URL=http://$address/mosn.tar.gz
-export ISTIO_ENVOY_CENTOS_RELEASE_URL=http://$address/mosn-centos.tar.gz
-export SIDECAR=mosn
+export ISTIO_ENVOY_RELEASE_URL=http://127.0.0.1:10000/envoy.tar.gz
+export ISTIO_ENVOY_CENTOS_RELEASE_URL=$ISTIO_ENVOY_RELEASE_URL
 
 # set local proxy
 #export https_proxy=socks5://127.0.0.1:1080
